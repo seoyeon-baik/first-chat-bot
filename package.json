@@ -1,0 +1,9 @@
+{
+  "name": "ai-chatbot-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "node --env-file=.env server.js", "dev": "node --env-file=.env --watch server.js", "test": "node --test" },
+  "engines": { "node": ">=22" },
+  "dependencies": { "express": "^5.1.0" }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>담담 — AI 챗봇</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="chat-app">
+    <header>
+      <div class="brand"><span class="logo" aria-hidden="true">✳</span><div><h1>담담</h1><p>생각을 나누는 작은 공간</p></div></div>
+      <button id="reset" class="reset" type="button">＋ 새 대화</button>
+    </header>
+    <div class="model"><span></span> GPT-4o mini <span class="model-note">대화의 맥락을 기억해요</span></div>
+    <section id="messages" aria-label="대화 내용" role="log" aria-live="polite">
+      <div id="welcome" class="welcome"><div class="welcome-icon" aria-hidden="true">✳</div><h2>어떤 이야기를 나눠볼까요?</h2><p>궁금한 것부터 떠오른 아이디어까지,<br>편하게 말을 걸어 주세요.</p><div class="suggestions"><button type="button">어려운 개념을 쉽게 설명해 줘</button><button type="button">오늘 할 일을 함께 정리해 줘</button><button type="button">새로운 아이디어를 떠올리고 싶어</button></div></div>
+    </section>
+    <footer>
+      <p id="status" role="status"></p>
+      <form id="chat-form"><label class="sr-only" for="input">메시지</label><textarea id="input" rows="1" maxlength="8000" placeholder="메시지를 입력하세요…" required></textarea><button id="send" type="submit" aria-label="메시지 보내기">↑</button></form>
+      <p class="footnote">Enter로 전송 · Shift + Enter로 줄바꿈<br>최근 20회 대화를 반영하며, 새로고침하면 대화가 사라집니다.</p>
+    </footer>
+  </main>
+</body>
+</html>
