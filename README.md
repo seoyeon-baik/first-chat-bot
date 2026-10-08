@@ -6,19 +6,23 @@ HTML, CSS, JavaScript와 Node.js / Express로 만든 간단한 한국어 챗봇�
 
 1. Node.js 22 이상을 설치합니다.
 2. 프로젝트 폴더에서 `npm install`을 실행합니다.
-3. `.env.example`을 복사하여 `.env`를 만들고 `OPENAI_API_KEY`에 자신의 OpenAI API 키를 입력합니다.
+3. 프로젝트 폴더에 `.env` 파일을 만들고 아래 설정을 입력합니다. API 키는 자신의 키로 교체합니다.
 4. `npm start`를 실행한 뒤 http://localhost:3000 에 접속합니다.
 
 ```sh
 npm install
-cp .env.example .env
-# .env 파일을 편집하여 API 키 입력
+# .env 파일 생성 및 API 키 설정 후 실행
 npm start
 ```
 
-개발 중 파일 변경 시 자동 재시작하려면 `npm run dev`를 사용합니다. `PORT`로 포트를 변경할 수 있습니다. 서버는 로컬 컴퓨터에서만 접속하도록 설정되어 있습니다.
+`.env` 설정:
 
-`npm test`로 대화 기록 전달, 입력 검증, 키 누락 및 API 오류 처리를 확인할 수 있습니다. 테스트는 모의 응답을 사용하므로 실제 API 키나 요금이 필요하지 않습니다.
+```dotenv
+OPENAI_API_KEY=your_openai_api_key_here
+PORT=3000
+```
+
+개발 중 파일 변경 시 자동 재시작하려면 `npm run dev`를 사용합니다. `PORT`로 포트를 변경할 수 있습니다. 서버는 로컬 컴퓨터에서만 접속하도록 설정되어 있습니다.
 
 ## 대화 기록
 
