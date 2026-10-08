@@ -24,6 +24,12 @@ PORT=3000
 
 개발 중 파일 변경 시 자동 재시작하려면 `npm run dev`를 사용합니다. `PORT`로 포트를 변경할 수 있습니다. 서버는 로컬 컴퓨터에서만 접속하도록 설정되어 있습니다.
 
+## Vercel 배포
+
+GitHub 저장소를 Vercel 프로젝트에 연결하고 Express 프레임워크를 사용합니다. 별도 Build Command나 Output Directory는 지정하지 않습니다. `public/` 파일은 Vercel이 제공하고, `server.js`의 기본 내보내기인 Express 앱이 API 요청을 처리합니다.
+
+Vercel 프로젝트의 Settings → Environment Variables에서 `OPENAI_API_KEY`를 추가하고 Production 환경에 적용한 뒤 다시 배포합니다. 로컬 `.env`는 GitHub에 업로드되지 않으므로 Vercel에도 자동으로 전달되지 않습니다. `npm start`는 로컬 실행용이며 Vercel Build Command로 지정하지 않습니다.
+
 ## 대화 기록
 
 - 데이터베이스, 파일, localStorage를 사용하지 않고 브라우저의 JavaScript 메모리에 기록을 보관합니다.

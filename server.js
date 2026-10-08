@@ -51,7 +51,10 @@ export function createApp({ apiKey = process.env.OPENAI_API_KEY, fetchImpl = fet
   return app;
 }
 
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
+const app = createApp();
+export default app;
+
+if (!process.env.VERCEL && process.argv[1] === fileURLToPath(import.meta.url)) {
   const port = process.env.PORT || 3000;
-  createApp().listen(port, '127.0.0.1', () => console.log(`챗봇 실행: http://localhost:${port}`));
+  app.listen(port, '127.0.0.1', () => console.log(`챗봇 실행: http://localhost:${port}`));
 }
